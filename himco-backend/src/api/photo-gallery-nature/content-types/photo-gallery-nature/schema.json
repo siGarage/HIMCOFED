@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photo_gallery_natures",
+  "info": {
+    "singularName": "photo-gallery-nature",
+    "pluralName": "photo-gallery-natures",
+    "displayName": "Photo_gallery_nature"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photo_gallery_cars",
+  "info": {
+    "singularName": "photo-gallery-car",
+    "pluralName": "photo-gallery-cars",
+    "displayName": "Photo_gallery_car"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
