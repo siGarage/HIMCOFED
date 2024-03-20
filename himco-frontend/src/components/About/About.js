@@ -16,7 +16,7 @@ function NavScrollExample() {
           </div>
         </div>
         <div  style={{display:'flex',flex:'row',alignItems:'center'}}><div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><img src={shape} alt='location_img' style={{width:'16px',marginRight:'5px'}}/></div><h6 className="address" style={{color:'#0033B8',height:'18px',display:'flex',alignItems:'center'}}>Sahkar Bhawan, Near Dogra Lodge, Shimla-171004 (H.P.) Phone : 2656667-2803323</h6></div>
-        <div  style={{display:'flex',flex:'row',alignItems:'center'}}><div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><img src={phone} alt='contact_img' style={{width:'16px',marginRight:'5px'}}/></div><h6 className="address" style={{color:'#0033B8',height:'18px',display:'flex',alignItems:'center'}}>+91 9418029712</h6></div>
+        {/* <div  style={{display:'flex',flex:'row',alignItems:'center'}}><div style={{display:'flex',justifyContent:'center',alignItems:'center'}}><img src={phone} alt='contact_img' style={{width:'16px',marginRight:'5px'}}/></div><h6 className="address" style={{color:'#0033B8',height:'18px',display:'flex',alignItems:'center'}}>+91 9418029712</h6></div> */}
         </div>
 
         

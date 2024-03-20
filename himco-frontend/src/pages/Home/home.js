@@ -261,7 +261,7 @@ function Home(props) {
         </div>
       </div>
 
-      <div className="chairman">
+      {/* <div className="chairman">
         <div
           className="image-1"
           style={{
@@ -321,7 +321,7 @@ function Home(props) {
           </div>
           <div></div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
