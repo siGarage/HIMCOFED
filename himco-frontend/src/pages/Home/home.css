@@ -33,7 +33,7 @@
     align-items: center;
 }
 .personality img{
-    width: 60% !important;
+    width: auto;
     height: 200px;
 }
 .carousel-home{
@@ -89,7 +89,7 @@
 
 .home-image-links{
     font-family: 'Domine', serif;
-    width: 40%;
+    /* width: 40%; */
 }
 
 /* news-ticker */   

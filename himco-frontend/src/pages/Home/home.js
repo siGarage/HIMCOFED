@@ -1,4 +1,5 @@
 import "./home.css";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NewsTicker from "react-advanced-news-ticker";
 import Img2 from "./alert.png";
@@ -8,20 +9,39 @@ import Person3 from "./3.jpg";
 import Image1 from "./carousel-image/1.jpg";
 import Image2 from "./carousel-image/2.jpg";
 import Image3 from "./carousel-image/3.jpg";
+import Carousel from "../Gallery/Corousel";
+
 function Home(props) {
+  let [arr, setArr] = useState([]);
+
+  let fetchData = async (phototypes) => {
+    console.log(
+      `${process.env.REACT_APP_SERVERNAME}/api/${phototypes}?populate=*`
+    );
+    let data = await fetch(
+      `${process.env.REACT_APP_SERVERNAME}/api/${phototypes}?populate=*`
+    );
+    let response = await data.json();
+    let notification = await response.data;
+    setArr([...notification]);
+  };
   let n_arr = [...props.arr];
   console.log(n_arr);
   n_arr.reverse();
-  let arr = n_arr.slice(0, 6);
+  let arr_1 = n_arr.slice(0, 6);
   console.log(arr);
   function formatMyDate(value, locale = "en-GB") {
     return new Date(value).toLocaleDateString(locale);
   }
 
+  useEffect(() => {
+    fetchData("gallery-category1s");
+  }, []);
+
   return (
     <div className="home">
       <div className="component">
-        <div className="carousel carousel-home">
+        {/* <div className="carousel carousel-home">
           <div
             id="carouselExampleControls"
             className="carousel slide"
@@ -67,161 +87,170 @@ function Home(props) {
               <span className="sr-only">Next</span>
             </a>
           </div>
-        </div>
-        <div className="home-image-links" style={{ margin: "50px 0px" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#B80000",
-              height: "60px",
-              color: "white",
-              fontSize: "24px",
-            }}
-          >
-            NOTIFICATIONS
+        </div> */}
+        <div className="row">
+          <div className="col-md-9 col-lg-9 col-sm-12">
+            <div className="carousel-gallery">
+              <Carousel />
+            </div>
           </div>
-          {arr.length !== 0 ? (
-            <NewsTicker
-              key={Math.random()}
-              rowHeight={30}
-              maxRows={16}
-              speed={2000}
-              // direction = {Directions.DOWN}
-              duration={2000}
-              autoStart={true}
-              pauseOnHover={true}
-              id="myId"
-              className="myClassName1 myClassName2"
-              style={{ margin: "0px", backgroundColor: "#71AEDA" }}
-            >
-              {arr.map((element) => {
-                return element.attributes.Download.data ? (
-                  <a
-                    style={{ color: "black", textDecoretion: "none" }}
-                    href={`${process.env.REACT_APP_SERVERNAME}${element.attributes.Download.data[0].attributes.url}`}
-                  >
-                    <div
-                      key={element.id}
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        marginTop: "15px",
-                      }}
-                    >
-                      <img src={Img2} alt="new" />
-                      <div style={{ width: "70%" }}>
+          <div className="col-md-3 col-lg-3 col-sm-12">
+            <div className="home-image-links">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#B80000",
+                  height: "60px",
+                  color: "white",
+                  fontSize: "24px",
+                }}
+              >
+                NOTIFICATIONS
+              </div>
+              {arr_1.length !== 0 ? (
+                <NewsTicker
+                  key={Math.random()}
+                  rowHeight={30}
+                  maxRows={16}
+                  speed={2000}
+                  // direction = {Directions.DOWN}
+                  duration={2000}
+                  autoStart={true}
+                  pauseOnHover={true}
+                  id="myId"
+                  className="myClassName1 myClassName2"
+                  style={{ margin: "0px", backgroundColor: "#71AEDA" }}
+                >
+                  {arr_1.map((element) => {
+                    return element.attributes.Download.data ? (
+                      <a
+                        style={{ color: "black", textDecoretion: "none" }}
+                        href={`${process.env.REACT_APP_SERVERNAME}${element.attributes.Download.data[0].attributes.url}`}
+                      >
                         <div
+                          key={element.id}
                           style={{
-                            marginBottom: "0px",
                             display: "flex",
-                            justifyContent: "space-between",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            marginTop: "15px",
                           }}
                         >
-                          {element.attributes.Heading ? (
-                            <div>{element.attributes.Heading}</div>
-                          ) : (
-                            <div>...</div>
-                          )}
-                          <div style={{ fontSize: "12px" }}>
-                            {formatMyDate(element.attributes.createdAt)}
+                          <img src={Img2} alt="new" />
+                          <div style={{ width: "70%" }}>
+                            <div
+                              style={{
+                                marginBottom: "0px",
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              {element.attributes.Heading ? (
+                                <div>{element.attributes.Heading}</div>
+                              ) : (
+                                <div>...</div>
+                              )}
+                              <div style={{ fontSize: "12px" }}>
+                                {formatMyDate(element.attributes.createdAt)}
+                              </div>
+                            </div>
+                            <div style={{ fontSize: "12px" }}>
+                              {element.attributes.Description ? (
+                                <div>
+                                  {element.attributes.Description.slice(0, 25)}
+                                  ...
+                                </div>
+                              ) : (
+                                <div>...</div>
+                              )}
+                            </div>
                           </div>
                         </div>
-                        <div style={{ fontSize: "12px" }}>
-                          {element.attributes.Description ? (
-                            <div>
-                              {element.attributes.Description.slice(0, 25)}...
-                            </div>
-                          ) : (
-                            <div>...</div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                ) : (
-                  <div
-                    key={element.id}
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      marginTop: "15px",
-                    }}
-                  >
-                    <img src={Img2} alt="new" />
-                    <div style={{ width: "70%" }}>
+                      </a>
+                    ) : (
                       <div
+                        key={element.id}
                         style={{
-                          marginBottom: "0px",
                           display: "flex",
-                          justifyContent: "space-between",
+                          flexDirection: "row",
+                          alignItems: "center",
+                          marginTop: "15px",
                         }}
                       >
-                        <div>
-                          {element.attributes.Heading ? (
-                            <div>{element.attributes.Heading}</div>
-                          ) : (
-                            <div>...</div>
-                          )}
-                        </div>
-                        <div style={{ fontSize: "12px" }}>
-                          {formatMyDate(element.attributes.createdAt)}
-                        </div>
-                      </div>
-                      <div style={{ fontSize: "12px" }}>
-                        {element.attributes.Description ? (
-                          <div>
-                            {element.attributes.Description.slice(0, 25)}...
+                        <img src={Img2} alt="new" />
+                        <div style={{ width: "70%" }}>
+                          <div
+                            style={{
+                              marginBottom: "0px",
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <div>
+                              {element.attributes.Heading ? (
+                                <div>{element.attributes.Heading}</div>
+                              ) : (
+                                <div>...</div>
+                              )}
+                            </div>
+                            <div style={{ fontSize: "12px" }}>
+                              {formatMyDate(element.attributes.createdAt)}
+                            </div>
                           </div>
-                        ) : (
-                          <div>...</div>
-                        )}
+                          <div style={{ fontSize: "12px" }}>
+                            {element.attributes.Description ? (
+                              <div>
+                                {element.attributes.Description.slice(0, 25)}...
+                              </div>
+                            ) : (
+                              <div>...</div>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </NewsTicker>
-          ) : (
-            <div
-              style={{
-                height: "375px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: "18px",
-              }}
-            >
-              No Notifications
+                    );
+                  })}
+                </NewsTicker>
+              ) : (
+                <div
+                  style={{
+                    height: "375px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    fontSize: "18px",
+                  }}
+                >
+                  No Notifications
+                </div>
+              )}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                  backgroundColor: "#71AEDA",
+                  padding: "10px 10px",
+                  fontSize: "14px",
+                }}
+              >
+                <Link
+                  className="nav-link"
+                  to="/notification"
+                  style={{ color: "white" }}
+                >
+                  View All &gt;
+                </Link>
+              </div>
             </div>
-          )}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              backgroundColor: "#71AEDA",
-              padding: "10px 10px",
-              fontSize: "14px",
-            }}
-          >
-            <Link
-              className="nav-link"
-              to="/notification"
-              style={{ color: "white" }}
-            >
-              View All &gt;
-            </Link>
           </div>
         </div>
       </div>
-
       <div>
         <div className="Persons">
-          {/* <div className="personality">
+          <div className="personality">
             <div className="personality-image">
               <img src={Person1} alt="personality" />
             </div>
@@ -235,7 +264,7 @@ function Home(props) {
                 Minister
               </p>
             </div>
-          </div> */}
+          </div>
           <div className="personality">
             <div className="personality-image">
               <img src={Person2} alt="personality" />
