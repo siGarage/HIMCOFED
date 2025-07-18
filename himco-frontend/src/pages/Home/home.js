@@ -254,14 +254,14 @@ function Home(props) {
             <div className="personality-image">
               <img src={Person1} alt="personality" />
             </div>
-            <div style={{ margin: "20px 20px", height: "120px" }}>
-              <b style={{ fontSize: "18px" }}>Sh. Mukesh Agnihotri</b>
+            <div className="personality-text" style={{ margin: "20px 20px", height: "120px" }}>
+              <b style={{ fontSize: "18px" , textAlign: "center" }}>Sh. Mukesh Agnihotri</b>
               <br />
-              <p style={{ fontSize: "14px" }}>
-                Hon'ble Deputy Chief Minister
+              <p style={{ fontSize: "13px" , textAlign: "center" }}>
+                Hon'ble Deputy Chief Minister of Himachal Pradesh
                 <br />
                 Co-operation, Jal Shakti, Transport, Language, Arts and Culture
-                Minister
+                Minister of H.P.
               </p>
             </div>
           </div>
@@ -269,21 +269,21 @@ function Home(props) {
             <div className="personality-image">
               <img src={Person2} alt="personality" />
             </div>
-            <div style={{ margin: "20px 20px", height: "120px" }}>
-              <b style={{ fontSize: "18px" }}>Sh. C. Paulrasu, IAS</b>
+            <div className="personality-text" style={{ margin: "20px 20px", height: "120px" }}>
+              <b style={{ fontSize: "18px" , textAlign: "center" }}>Sh. C. Paulrasu, IAS</b>
               <br />
-              <p style={{ fontSize: "14px" }}>Secretary Cooperation</p>
+              <p style={{ fontSize: "14px" , textAlign: "center" }}>Secretary Cooperation , Government of Himachal Pradesh</p>
             </div>
           </div>
           <div className="personality">
             <div className="personality-image">
               <img src={Person3} alt="personality" />
             </div>
-            <div style={{ margin: "20px 20px", height: "120px" }}>
-              <b style={{ fontSize: "18px" }}>Dr. RK Pruthi, IAS</b>
+            <div className="personality-text" style={{ margin: "20px 20px", height: "120px" }}>
+              <b style={{ fontSize: "18px" , textAlign: "center" }}>Dr. RK Pruthi, IAS</b>
               <br />
-              <p style={{ fontSize: "14px" }}>
-                Registrar Cooperative Societies
+              <p style={{ fontSize: "14px" , textAlign: "center" }}>
+                Registrar Cooperative Societies , Government of Himachal Pradesh
               </p>
             </div>
           </div>

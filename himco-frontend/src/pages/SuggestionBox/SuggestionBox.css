@@ -1,0 +1,77 @@
+.suggestion-box-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #fff;
+  border: 2px solid #b80000;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.suggestion-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #b80000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.status-message {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #007700;
+}
+
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.suggestion-form label {
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-form label span {
+  color: red;
+  margin-left: 2px;
+}
+
+.suggestion-form input,
+.suggestion-form textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.suggestion-form textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #b80000;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #8d0000;
+}
+
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}

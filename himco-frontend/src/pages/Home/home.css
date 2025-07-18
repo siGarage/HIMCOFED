@@ -13,6 +13,19 @@
     margin: 100px 100px;
     font-family: Domine;
 }
+.personality-text {
+  text-align: center;
+}
+
+.personality-text b {
+  font-size: 18px;
+}
+
+.personality-text p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 .personality{
     width: 33%;
     display: flex;
@@ -33,7 +46,7 @@
     align-items: center;
 }
 .personality img{
-    width: auto;
+    width: 100%;
     height: 200px;
 }
 .carousel-home{

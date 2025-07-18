@@ -106,6 +106,20 @@ const handelClick=(text)=>{
           हिमाचल प्रदेश राज्य सहकारी विकास संघ सीमित 
           </div>
         </div>
+        <div className="header-logos">
+          <a href="#" rel="noopener noreferrer" aria-label="Logo 1">
+            <img src="/static/media/logo1.04b798d2e3d438c43450.jpeg" alt="Logo 1" className="header-logo" />
+          </a>
+          <a href="https://www.cooperation.gov.in/" rel="noopener noreferrer" aria-label="Ministry of Cooperation">
+            <img src="/static/media/logo2.9653f9beba19f6bd4c83.png" alt="Ministry of Cooperation Logo" className="header-logo" />
+          </a>
+          <a href="#" rel="noopener noreferrer" aria-label="Logo 3">
+            <img src="/static/media/logo3.b3534febebd692483998.png" alt="Logo 3" className="header-logo" />
+          </a>
+          <a href="#" rel="noopener noreferrer" aria-label="Logo 4">
+            <img src="/static/media/logo4.6372ffa40778b2b64dd7.png" alt="Logo 4" className="header-logo" />
+          </a>
+        </div>
         <div className='search' style={{width:'230px'}}>
          <input type='text' placeholder='search' onKeyDown={handleKeyDown} onChange={handleOnChange}/>
          <div style={{cursor:'pointer'}} onClick={()=>handelClick(text)}><div className='search-button' style={{backgroundColor:'#B80000',color:'white',display:'flex',justifyContent:'center',alignItems:'center',width:'38px',height:'30px'}}> <span className="material-symbols-outlined">search</span></div></div>
