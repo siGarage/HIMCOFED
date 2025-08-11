@@ -8,7 +8,11 @@ const Card = ({ id, title, image }) => {
   return (
     <div className="card fade-in">
       <img src={image} alt={title} className="card-img" />
-      <p className="card-title">{title}</p>
+      
+      <div className="card-title-wrapper">
+        <p className="card-title">{title}</p>
+      </div>
+
       <button className="view-btn" onClick={() => navigate(`/gallery/${id}`)}>
         View All
       </button>
@@ -17,6 +21,3 @@ const Card = ({ id, title, image }) => {
 };
 
 export default Card;
-
-
-

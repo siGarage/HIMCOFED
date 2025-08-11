@@ -20,7 +20,7 @@
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: scrollLeft 50s linear infinite;
+  animation: scrollLeft 100s linear infinite;
 }
 
 .marquee-container:hover .marquee-track {
