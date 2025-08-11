@@ -119,8 +119,11 @@ const handelClick=(text)=>{
           <a href="#" rel="noopener noreferrer" aria-label="Logo 4">
             <img src="/static/media/logo4.6372ffa40778b2b64dd7.png" alt="Logo 4" className="header-logo" />
           </a>
+          <a href="#" rel="noopener noreferrer" aria-label="Logo 5">
+            <img src="/static/media/hpgov.png" alt="Logo 5" className="header-logo" />
+          </a>
         </div>
-        <div className='search' style={{width:'230px'}}>
+        <div className='search'>
          <input type='text' placeholder='search' onKeyDown={handleKeyDown} onChange={handleOnChange}/>
          <div style={{cursor:'pointer'}} onClick={()=>handelClick(text)}><div className='search-button' style={{backgroundColor:'#B80000',color:'white',display:'flex',justifyContent:'center',alignItems:'center',width:'38px',height:'30px'}}> <span className="material-symbols-outlined">search</span></div></div>
         </div>

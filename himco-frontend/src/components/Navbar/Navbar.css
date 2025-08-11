@@ -3,22 +3,27 @@
     background-color: white;
     padding:10px 0px;
 }
-.search{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 15%;
+.search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 1;
+  min-width: 120px;
 }
+
+
 .search-input{
     display: none;
 }
-.Navbar-container
-{
-    background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.Navbar-container {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* instead of space-evenly */
+  flex-wrap: nowrap;
 }
+
+
 
 .logo img
 {
@@ -27,28 +32,32 @@
 }
 
 .heading {
-    font-family: 'Domine', serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  flex-shrink: 1;
+  min-width: 0;
+  text-align: center;
 }
 
 
+
+
 .header-logos {
-    display: flex;
-    gap: 12px;
-    margin-left: 10px;
-    margin-right: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  gap: 12px;         /* fixed minimum gap */
+  align-items: center;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+
+
+
 .header-logo {
-    width: 50px; 
-    height: auto;
-    transition: transform 0.3s ease;
-  }  
+  max-width: 48px;   /* normal size */
+  height: auto;
+  flex-shrink: 1;    /* allow logo to shrink when space is tight */
+}
+
+ 
 
 .english-heading
 {
@@ -66,28 +75,36 @@
 
 
 
-@media only screen and (max-width: 600px) 
-{
+@media only screen and (max-width: 600px) {
     .header-logo {
-        width: 40px; 
+        width: 36px;  /* slightly smaller than before */
         height: auto;
-      }
-    .logo img
-    {
-        height:44px;
-        width:44px;
     }
 
-    .english-heading
-    {
-    font-size: 14px; 
+    .header-logos {
+        gap: 10px;        /* keep a nice gap */
+        flex-wrap: wrap;  /* allow wrapping on small screens */
+        justify-content: center;
     }
 
-    .hindi-heading
-    {    
+    .logo img {
+        height: 44px;
+        width: 44px;
+    }
+
+    .english-heading {
+        font-size: 14px; 
+    }
+
+    .hindi-heading {    
         font-size: 14px;
     }
-  }
+
+    .search {
+        min-width: 90px;  /* allow search bar to shrink more */
+    }
+}
+
 
 
   @media only screen and (max-width: 900px) 
@@ -114,7 +131,22 @@
     {
         display: none;
     }
+    .heading { max-width: 55%; font-size: 14px; }
+    .header-logo { max-width: 36px; }
   }
+
+  @media (max-width: 1024px) {
+  .header-logo {
+    max-width: 40px;
+  }
+  .english-heading,
+  .hindi-heading {
+    font-size: 18px;
+  }
+  .search {
+    min-width: 100px;
+  }
+}
 
   @media only screen and (max-width: 1280px){
         .english-heading
