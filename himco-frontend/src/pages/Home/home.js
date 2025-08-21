@@ -5,7 +5,7 @@ import NewsTicker from "react-advanced-news-ticker";
 import Img2 from "./alert.png";
 import Person1 from "./1.png";
 import Person2 from "./2.png";
-import Person3 from "./3.jpg";
+import Person3 from "./img.png";
 import Image1 from "./carousel-image/1.jpg";
 import Image2 from "./carousel-image/2.jpg";
 import Image3 from "./carousel-image/3.jpg";
@@ -280,7 +280,7 @@ function Home(props) {
               <img src={Person3} alt="personality" />
             </div>
             <div className="personality-text" style={{ margin: "20px 20px", height: "120px" }}>
-              <b style={{ fontSize: "18px" , textAlign: "center" }}>Dr. RK Pruthi, IAS</b>
+              <b style={{ fontSize: "18px" , textAlign: "center" }}>D.C. Negi (IAS)</b>
               <br />
               <p style={{ fontSize: "14px" , textAlign: "center" }}>
                 Registrar Cooperative Societies , Government of Himachal Pradesh
