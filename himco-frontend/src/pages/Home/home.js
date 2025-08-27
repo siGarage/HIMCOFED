@@ -280,7 +280,7 @@ function Home(props) {
               <img src={Person3} alt="personality" />
             </div>
             <div className="personality-text" style={{ margin: "20px 20px", height: "120px" }}>
-              <b style={{ fontSize: "18px" , textAlign: "center" }}>D.C. Negi (IAS)</b>
+              <b style={{ fontSize: "18px" , textAlign: "center" }}>Sh. D.C. Negi (IAS)</b>
               <br />
               <p style={{ fontSize: "14px" , textAlign: "center" }}>
                 Registrar Cooperative Societies , Government of Himachal Pradesh
