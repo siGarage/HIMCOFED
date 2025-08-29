@@ -5,12 +5,13 @@ module.exports = {
     {
       method: 'POST',
       path: '/suggestion/send',
-      handler: 'suggestion.create',
+      handler: 'api::suggestion.suggestion.create', // v4 syntax
       config: {
-        auth: false,                  // allow public access (no JWT needed)
+        auth: false,
         policies: [],
         middlewares: [],
       },
     },
   ],
 };
+
